@@ -1,0 +1,9 @@
+.hidden {
+    display: none;
+}
+
+/* .show {display: block;} */
+
+.links {
+    background-color: hsl(217, 19%, 35%);
+}
