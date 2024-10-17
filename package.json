@@ -1,0 +1,23 @@
+{
+  "name": "article-preview-component",
+  "version": "1.0.0",
+  "description": "![Design preview for the Article preview component coding challenge](./design/desktop-preview.jpg)",
+  "main": "tailwind.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npx tailwindcss -i ./style.css -o ./dist/style.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Fikerte-T/article-preview-component.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Fikerte-T/article-preview-component/issues"
+  },
+  "homepage": "https://github.com/Fikerte-T/article-preview-component#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.4.14"
+  }
+}
