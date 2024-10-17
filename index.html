@@ -6,61 +6,82 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="dist/style.css">
   <title>Frontend Mentor | Article preview component</title>
-
+  <style>
+      .notch::after {
+      content: '';
+      position: absolute;
+      bottom: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-left: 20px solid transparent; 
+      border-right: 20px solid transparent; 
+      border-top: 20px solid hsl(217, 19%, 35%); 
+    }
+  </style>
 </head>
 <body class="font-custom">
   <main class="bg-custom-LightGrayishBlue min-h-svh min-w-full flex justify-center items-center">
-    <div class="container bg-white max-w-sm rounded-xl w-[88%]">
-      <div class="w-full h-52 overflow-hidden">
-        <img class="drawer-img w-full h-auto object-bottom object-cover rounded-t-xl" src="images/drawers.jpg" alt="drawers image">
+    <div class="relative bg-white max-w-sm rounded-xl w-[88%] lg:grid lg:grid-cols-[40%,60%] lg:max-w-none lg:w-[55%]">
+      <div class="w-full h-52 overflow-hidden lg:h-auto">
+        <img class="drawer-img w-full h-full object-top object-cover rounded-t-xl lg:rounded-tr-none lg:rounded-bl-xl" src="images/drawers.jpg" alt="drawers image">
       </div>
-      <div class="px-6 pt-7">
-      <div>
-        <h2 class="text-custom-VeryDarkGrayishBlue font-bold text-lg">Shift the overall look and feel by adding these wonderful 
-          touches to furniture in your home</h2>
-        <p class="font-normal text-custom-DesaturatedDarkBlue py-4 text-[0.91rem]"> Ever been in a room and felt like something was missing? Perhaps 
-        it felt slightly bare and uninviting. I’ve got some simple tips 
-        to help you make any room feel complete.</p>
-      </div>
-      <!-- <div class="footer"> -->
-        <div class="avatar-div flex py-4">
+      <div class="px-6 pt-7 lg:px-12 lg:py-8 lg:flex flex-col justify-evenly">
+        <div>
+          <h2 class="text-custom-VeryDarkGrayishBlue font-bold text-lg lg:text-xl">Shift the overall look and feel by adding these wonderful 
+            touches to furniture in your home</h2>
+          <p class="font-normal text-custom-DesaturatedDarkBlue py-4 text-[0.91rem]"> Ever been in a room and felt like something was missing? Perhaps 
+          it felt slightly bare and uninviting. I’ve got some simple tips 
+          to help you make any room feel complete.</p>
+        </div>
+        <div class="avatar-div flex py-4 lg:p-0">
           <img class="mr-6 rounded-full" src="images/avatar-michelle.jpg" alt="" width="50px" height="50px">
           <div >
             <p class="text-custom-VeryDarkGrayishBlue font-bold">Michelle Appleton</p>
             <p class="text-custom-DesaturatedDarkBlue text-[0.91rem]">28 Jun 2020</p>
           </div>
           <button class="ml-auto border-none bg-custom-LightGrayishBlue p-2 h-9 w-9 rounded-full" id="button" onclick="showLinks()">
-            <svg class="text-custom-DesaturatedDarkBlue" xmlns="http://www.w3.org/2000/svg" width="15" height="13"><path fill="currentColor" 
+            <svg class="share-svg text-custom-DesaturatedDarkBlue" xmlns="http://www.w3.org/2000/svg" width="15" height="13"><path fill="currentColor" 
               d="M15 6.495L8.766.014V3.88H7.441C3.33 3.88 0 7.039 0 10.936v2.049l.589-.612C2.59 10.294 5.422 9.11 8.39 9.11h.375v3.867L15 6.495z"/>
             </svg>
             </button>
         </div>
       </div>
-        
-        <div class="hidden links-div bg-custom-VeryDarkGrayishBlue flex justify-evenly items-center py-6 px-6 rounded-b-xl">
-          <p class="uppercase text-sm tracking-[0.5rem] text-custom-GrayishBlue">share</p>
-          <img class="w-6 h-6 ml-3" src="images/icon-facebook.svg" alt="">
-          <img class="w-6 h-6 ml-3" src="images/icon-twitter.svg" alt="">
-          <img class="w-6 h-6 ml-3" src="images/icon-pinterest.svg" alt="">
-          <button class="ml-auto border-none bg-custom-DesaturatedDarkBlue p-2 h-9 w-9 rounded-full" id="button" onclick="showLinks()">
-            <svg class="text-custom-LightGrayishBlue" xmlns="http://www.w3.org/2000/svg" width="15" height="13"><path fill="currentColor" 
-              d="M15 6.495L8.766.014V3.88H7.441C3.33 3.88 0 7.039 0 10.936v2.049l.589-.612C2.59 10.294 5.422 9.11 8.39 9.11h.375v3.867L15 6.495z"/>
-            </svg>
-          </button>
-        </div>
-       
+      <div class="notch hidden links-div bg-custom-VeryDarkGrayishBlue flex justify-evenly items-center p-6 rounded-b-xl lg:absolute lg:bottom-[6.5rem] lg:-right-16 lg:px-9 lg:py-4 lg:rounded-xl">
+        <p class="uppercase text-sm tracking-[0.5rem] text-custom-GrayishBlue">share</p>
+        <a href="#"><img class="w-6 h-6 ml-3" src="images/icon-facebook.svg" alt=""></a>
+        <a href="#"><img class="w-6 h-6 ml-3" src="images/icon-twitter.svg" alt=""></a>
+        <a href="#"><img class="w-6 h-6 ml-3" src="images/icon-pinterest.svg" alt=""></a>
+        <button id="popup-button" class="ml-auto border-none bg-custom-DesaturatedDarkBlue p-2 h-9 w-9 rounded-full" id="button" onclick="showLinks()">
+          <svg class="text-custom-LightGrayishBlue" xmlns="http://www.w3.org/2000/svg" width="15" height="13"><path fill="currentColor" 
+            d="M15 6.495L8.766.014V3.88H7.441C3.33 3.88 0 7.039 0 10.936v2.049l.589-.612C2.59 10.294 5.422 9.11 8.39 9.11h.375v3.867L15 6.495z"/>
+          </svg>
+        </button>
+      </div>
     </div>
   </main>
   <script>
+    window.addEventListener('resize', function() {
+      location.reload();
+    });
     const showLinks = function (){
       let avatardiv = document.querySelector(".avatar-div");
       let linksdiv = document.querySelector(".links-div");
       let button = document.querySelector("#button");
-      // let footer = document.querySelector(".footer")
-      avatardiv.classList.add("hidden")
-      linksdiv.classList.remove("hidden")
-      button.style.backgroundColor = 'hsl(217, 19%, 35%)'
-      // footer.style.padding = 0
+      let popupbutton = document.querySelector("#popup-button");
+      let shareSVG = document.querySelector(".share-svg");
+      
+      if(window.innerWidth <= 1024) {
+        avatardiv.classList.add("hidden");
+        linksdiv.classList.remove("hidden");
+        linksdiv.classList.remove("notch");
+      } else {
+        avatardiv.classList.remove("hidden");
+        linksdiv.classList.remove("hidden");
+        button.style.backgroundColor = 'hsl(217, 19%, 35%)';
+        shareSVG.style.color = 'hsl(210, 46%, 95%)';
+        popupbutton.classList.add("hidden");
+
+      }
     }
   </script>
 </body>
